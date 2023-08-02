@@ -68,7 +68,7 @@
                 <h1>kris.engineering</h1>
                 <h2>Coming Soon...</h2>
             </div>
-            
+
             <button id="TheButton">Contact Me</button>
             <p class="message">Try again!</p>
 
@@ -80,7 +80,8 @@
 
                 button.addEventListener('click', () => {
                     index = (index + 1) % messages.length;
-                    message.innerText = messages[index];
+                    message.textContent = messages[index];
+                    message.style.display = "block"
                     const x = Math.random() * (window.innerWidth - button.clientWidth);
                     const y = Math.random() * (window.innerHeight - button.clientHeight);
                     button.style.left = `${x}px`;
