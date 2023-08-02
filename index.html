@@ -52,10 +52,13 @@
                 .message {
                     font-size: 1em;
                     color: #AA4A44;
-                    align-items: center;
-                    justify-content: center;
+                    text-align: center;
+                    margin-top: 1em;
+                    display: none;
+                    position: fixed;
                     left: 50%;
-                    Top: 60%;
+                    top: 60%;
+                    transform: translate(-50%, -50%);
                 }
 
             </style>
@@ -64,9 +67,10 @@
             <div class="container">
                 <h1>kris.engineering</h1>
                 <h2>Coming Soon...</h2>
-                <p class="message">Try again!</p>
             </div>
+            
             <button id="TheButton">Contact Me</button>
+            <p class="message">Try again!</p>
 
             <script>
                 const button = document.getElementById('TheButton');
