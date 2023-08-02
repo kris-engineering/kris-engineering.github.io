@@ -52,6 +52,9 @@
                     font-size: 1em;
                     color: #AA4A44;
                     text-align: center;
+                    position: fixed;
+                    left: 50%;
+                    Top: 57%;
                 }
 
             </style>
@@ -67,7 +70,7 @@
             <script>
                 const button = document.getElementById('TheButton');
                 const message = document.querySelector('.message');
-                const messages = ["no", "try again!", "not this time!", "keep going!", "i'm busy", "go away!", "still going", "why are we here", "please save us and stop", "oi!", "please stop", "hi", "how", "are", "you", "please", "stop", "nope? still here?", "tough", "times", "never", "last", "only", "tough", "people", "last", "i'm done"];
+                const messages = ["no", "try again!", "not this time!", "keep going!", "i'm busy", "go away!", "still going", "why are we here", "please save us and stop", "oi!", "please stop", "hi", "how", "are", "you", "please", "stop", "nope? still here?", "i'm done"];
                 let index = 0;
 
                 button.addEventListener('click', () => {
