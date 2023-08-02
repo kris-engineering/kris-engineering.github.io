@@ -20,24 +20,66 @@
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 2.5em;
+            }
+
+            h2 {
+                margin-top: 0.5em;
+                font-size: 1.25em
+                color: black;
+            }
+
+            #TheButton {
+                padding: 10px 20px;
+                font-size: 1em;
+                cursor: pointer;
+                background-color: #FFFFDF;
+                color: black;
+                border: black;
+                border-radius: 5px;
+                position: fixed;
+                left: 50%;
+                Top: 57%;
+                transform: translate(-50%, -50%);
+            }
+
+                .message {
+                    margin-top: 1em;
+                    font-size: 1em;
+                    color: #AA4A44;
+                    text-align: center;
                 }
 
-                h1 {
-                    margin: 0;
-                    font-size: 2.5em;
-                }
-
-                h2 {
-                    margin-top: 0.5em;
-                    font-size: 1.25em;
-                    color: black;
-                }
             </style>
         </head>
         <body>
             <div class="container">
                 <h1>kris.engineering</h1>
                 <h2>Coming Soon...</h2>
+                <p class="message">Try again!</p>
             </div>
+            <button id="TheButton">Contact Me</button>
+
+            <script>
+                const button = document.getElementById('TheButton');
+                const message = document.querySelector('.message');
+                const messages = ["no", "try again!", "not this time!", "keep going!", "i'm busy", "go away!", "still going", "why are we here", "please save us and stop", "oi!", "please stop", "hi", "how", "are", "you", "please", "stop", "nope? still here?", "tough", "times", "never", "last", "only", "tough", "people", "last", "i'm done"];
+                let index = 0;
+
+                button.addEventListener('click', () => {
+                    index = (index + 1) % messages.length;
+                    message.innerText = messages[index];
+                    const x = Math.random() * (window.innerWidth - button.clientWidth);
+                    const y = Math.random() * (window.innerHeight - button.clientHeight);
+                    button.style.left = `${x}px`;
+                    button.style.top = `${y}px`;
+                    button.style.transform = 'none';
+                });
+            </script>
+
         </body>
         </html>
