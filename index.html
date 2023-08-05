@@ -60,59 +60,48 @@
                     top: 60%;
                     transform: translate(-50%, -50%);
 
-                .bulldozer {
-                    max-width: 3%;
-                    height: auto;
+                  .bulldozer {
+                    width: 100px;
                     position: absolute;
                     bottom: 0;
-                    left: -10%;
+                    left: -100px;
                     transition: all 2s linear;
 
-                }
+                    }
 
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <h1>kris.engineering</h1>
-                <h2>Coming Soon...</h2>
-                <p class="message">Try again!</p>
-            </div>
-            <button id="TheButton">Contact Me</button>
-            <img class="bulldozer" src="bulldozer.png" alt="Bulldozer">
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <h1>kris.engineering</h1>
+                    <h2>Coming Soon...</h2>
+                    <p class="message">Try again!</p>
+                </div>
+                <button id="TheButton">Contact Me</button>
+                <img class="bulldozer" src="bulldozer.png" alt="Bulldozer">
 
-            <script>
-                const button = document.getElementById('TheButton');
-                const message = document.querySelector('.message');
-                const container = document.querySelector('.container');
-                const messages = ["no", "try again!", "not this time!", "keep going!", "i'm busy", "go away!", "still going", "why are we here", "please save us and stop", "oi!", "please stop", "hi", "how", "are", "you", "please", "stop", "nope? still here?", "i'm done"];
-                let index = 0;
+                <script>
+                    const button = document.getElementById('TheButton');
+                    const message = document.querySelector('.message');
+                    const messages = ["no", "try again!", "not this time!", "keep going!", "i'm busy", "go away!", "still going", "why are we here", "please save us and stop", "oi!", "please stop", "hi", "how", "are", "you", "please", "stop", "nope? still here?", "i'm done"];
+                    let index = 0;
 
-                button.addEventListener('click', () => {
-                    index = (index + 1) % messages.length;
-                    message.textContent = messages[index];
-                    message.style.display = 'block';
+                    button.addEventListener('click', () => {
+                        index = (index + 1) % messages.length;
+                        message.textContent = messages[index];
+                        message.style.display = 'block';
+                    });
 
-                    const screeWidth = window.innerWidth;
-                    const screenHeight = window.innerHeight;
-                    const randomX = Math.random() * (screenWidth - button.clientWidth);
-                    const randomY - Math.random() * (screenHeight - button.cientHeight);
+                    const bulldozer = document.querySelector('.bulldozer');
 
-                    button.style.left = randomX + "px";
-                    button.style.top = randomY + "px";
-                });
+                    function moveBulldozer() {
+                        const screenWidth = window.innerWidth;
+                        const randomX = Math.random() * (screenWidth - 100);
 
-                const bulldozer = document.querySelector('.bulldozer');
+                        bulldozer.style.left = randomX + "px";
+                    }
 
-                function moveBulldozer() {
-                    const screenWidth = window.innerWidth;
-                    const randomX = Math.random() * (screenWidth - bulldozer.clientWidth);
-
-                    bulldozer.style.left = randomX + "px";
-                    container.style.backgroundColor = '#ffe694';
-                }
-
-                setInterval(moveBulldozer, 3000);
-            </script>
-        </body>
-        </html>
+                    setInterval(moveBulldozer, 3000);
+                </script>
+            </body>
+            </html>
