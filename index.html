@@ -61,10 +61,10 @@
                     transform: translate(-50%, -50%);
 
                 .bulldozer {
-                    width: 100px;
+                    width: 5%;
                     position: absolute;
                     bottom: 0;
-                    left: -100px;
+                    left: -5%;
                     transition: all 2s linear;
 
                 }
@@ -97,7 +97,7 @@
 
                 function moveBulldozer() {
                     const screenWidth = window.innerWidth;
-                    const randomX = Math.random() * (screenWidth - 100);
+                    const randomX = Math.random() * (screenWidth - bulldozer.clientWidth);
 
                     bulldozer.style.left = randomX + "px";
                     container.style.backgroundColor = '#ffe694';
