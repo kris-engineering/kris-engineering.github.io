@@ -61,10 +61,10 @@
                     transform: translate(-50%, -50%);
 
                 .bulldozer {
-                    width: 5%;
+                    width: 2%;
                     position: absolute;
                     bottom: 0;
-                    left: -5%;
+                    left: -2%;
                     transition: all 2s linear;
 
                 }
@@ -91,6 +91,14 @@
                     index = (index + 1) % messages.length;
                     message.textContent = messages[index];
                     message.style.display = 'block';
+
+                    const screeWidth = window.innerWidth;
+                    const screenHeight = window.innerHeight;
+                    const randomX = Math.random() * (screenWidth - button.clientWidth);
+                    const randomY - Math.random() * (screenHeight - button.cientHeight);
+
+                    button.style.left = randomX + "px";
+                    button.style.top = randomY + "px";
                 });
 
                 const bulldozer = document.querySelector('.bulldozer');
