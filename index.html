@@ -59,6 +59,14 @@
                     left: 50%;
                     top: 60%;
                     transform: translate(-50%, -50%);
+
+                .bulldozer {
+                    width: 100px;
+                    position: absolute;
+                    bottom: 0;
+                    left: -100px;
+                    transition: all 2s linear;
+
                 }
 
             </style>
@@ -67,28 +75,35 @@
             <div class="container">
                 <h1>kris.engineering</h1>
                 <h2>Coming Soon...</h2>
+                <p class="message">Try again!</p>
             </div>
-
             <button id="TheButton">Contact Me</button>
-            <p class="message">Try again!</p>
+            <img class="bulldozer" src="bulldozer.png" alt="Bulldozer">
 
             <script>
                 const button = document.getElementById('TheButton');
                 const message = document.querySelector('.message');
+                const container = document.querySelector('.container');
                 const messages = ["no", "try again!", "not this time!", "keep going!", "i'm busy", "go away!", "still going", "why are we here", "please save us and stop", "oi!", "please stop", "hi", "how", "are", "you", "please", "stop", "nope? still here?", "i'm done"];
                 let index = 0;
 
                 button.addEventListener('click', () => {
                     index = (index + 1) % messages.length;
                     message.textContent = messages[index];
-                    message.style.display = "block"
-                    const x = Math.random() * (window.innerWidth - button.clientWidth);
-                    const y = Math.random() * (window.innerHeight - button.clientHeight);
-                    button.style.left = `${x}px`;
-                    button.style.top = `${y}px`;
-                    button.style.transform = 'none';
+                    message.style.display = 'block';
                 });
-            </script>
 
+                const bulldozer = document.querySelector('.bulldozer');
+
+                function moveBulldozer() {
+                    const screenWidth = window.innerWidth;
+                    const randomX = Math.random() * (screenWidth - 100);
+
+                    bulldozer.style.left = randomX + "px";
+                    container.style.backgroundColor = '#ffe694';
+                }
+
+                setInterval(moveBulldozer, 3000);
+            </script>
         </body>
         </html>
