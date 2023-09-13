@@ -1,92 +1,17 @@
 
 <!DOCTYPE html>
-<html>
-<head>
-    <title>kris.engineering</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Helvetica, sans-serif;
-            background-color: #e1ad01;
-        }
-
-        .container {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        h2 {
-            margin-top: 0.5em;
-            font-size: 1.25em;
-            color: black;
-        }
-
-        #TheButton {
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: #FFFFDF;
-            color: black;
-            border: black;
-            border-radius: 5px;
-            position: fixed;
-            align-items: center;
-            justify-content: center;
-            left: 50%;
-            Top: 60%;
-            transform: translate(-50%, -50%);
-        }
-
-        .message {
-            font-size: 1em;
-            color: #AA4A44;
-            text-align: center;
-            margin-top: 1em;
-            display: none;
-            position: fixed;
-            left: 50%;
-            top: 60%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
-</head>
 <body>
-    <div class="container">
+    <div class="intro-section">
         <h1>kris.engineering</h1>
-        <h2>coming soon...</h2>
-      </div>
+        <p>kris.engineering showcases the professional journey of Kris Dahan. Explore further by scrolling down.</p>
+    </div>
 
-      <button id="TheButton">Contact Me</button>
-      <p class="message">Try again!</p>
-
-      <script>
-          const button = document.getElementById('TheButton');
-          const message = document.querySelector('.message');
-          const messages = ["no", "try again!", "not this time!", "keep going!", "i'm busy", "go away!", "still going", "why are we here", "please save us and stop", "oi!", "please stop", "hi", "how", "are", "you", "please", "stop", "nope? still here?", "i'm done"];
-          let index = 0;
-
-          button.addEventListener('click', () => {
-              index = (index + 1) % messages.length;
-              message.textContent = messages[index];
-              message.style.display = "block"
-              const x = Math.random() * (window.innerWidth - button.clientWidth);
-              const y = Math.random() * (window.innerHeight - button.clientHeight);
-              button.style.left = `${x}px`;
-              button.style.top = `${y}px`;
-              button.style.transform = 'none';
-          });
-      </script>
+    <div class="navigation-section">
+        <div class="nav-item"><a href="about.html">About</a></div>
+        <div class="nav-item"><a href="key-projects.html">Key Projects</a></div>
+        <div class="nav-item"><a href="passion-projects.html">Passion Projects</a></div>
+        <div class="nav-item"><a href="contact.html">Contact Me</a></div>
+        <div class="nav-item"><a href="https://kris.news">kris.news</a></div> <!-- Assuming this is the link to your blog-style posts site -->
+        <div class="nav-item"><a href="cv.html">CV</a></div>
+    </div>
 </body>
-</html>

@@ -1,0 +1,42 @@
+/* Body styling with background color */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.intro-section {
+    height: 100vh;  /* 100% of the viewport height */
+    background-color: #e1ad01;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.nav-item {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    flex-basis: calc(50% - 40px); /* For mobile: Two items per row minus padding */
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Media query for larger screens (e.g., screens wider than 768px) */
+@media screen and (min-width: 768px) {
+    .nav-item {
+        flex-basis: calc(33.33% - 40px); /* Three items per row minus padding */
+    }
+}
