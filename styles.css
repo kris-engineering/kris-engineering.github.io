@@ -1,47 +1,36 @@
 /* Body styling with background color */
 body, html {
-    height: 100%;
+    height: auto;
     background-color: #e1ad01;
     margin: 0;
     font-family: 'Helvetica', sans-serif;
 }
 
 h1 {
-    background-color: #e1ad01;
-    width: 100%;
     text-align: center;
-    font-size: 24px; /* Example size for mobile */
-}
-
-body, html {
-    height: 100%;
-}
-
-body > *:not(h1) {
-    margin-top: 60px; /* Spacing for mobile */
+    font-size: 24px;
+    margin-bottom: 10px; /* Some space between title and subtitle */
 }
 
 .intro-section {
     height: 100vh;
-    background-color: #e1ad01;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;  /* This ensures vertical centering without needing a transform */
-    padding: 0 20px;
+    justify-content: center;
+    padding: 0 20px; /* Add padding for mobile */
 }
 
 p {
     text-align: center;
-    padding: 20px 0; /* Gives some space above and below the paragraph */
 }
 
 .navigation-section {
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;  /* Distributes the children equally across the available height */
-    align-items: center;
+    flex-wrap: wrap;
+    align-content: center; /* This will vertically center the items in the flex container */
+    justify-content: center;
 }
 
 .nav-item {
@@ -57,9 +46,8 @@ p {
     color: black;
 }
 
-/* Media query for larger screens (e.g., screens wider than 768px) */
 @media screen and (min-width: 768px) {
     .nav-item {
-        flex-basis: calc(33.33% - 40px); /* Three items per row minus padding */
+        flex-basis: calc(33.33% - 40px); /* Three items per row minus padding for desktop */
     }
 }
