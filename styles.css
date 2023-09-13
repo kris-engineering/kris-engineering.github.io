@@ -31,7 +31,13 @@ body > *:not(h1) {
     justify-content: center;
 }
 
+p {
+    text-align: center;
+    padding: 20px 0; /* Gives some space above and below the paragraph */
+}
+
 .navigation-section {
+    padding-top: 100vh; /* Padding equal to the viewport height */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
