@@ -10,7 +10,6 @@ h1 {
     background-color: #e1ad01;
     width: 100%;
     text-align: center;
-    justify-content: center;
     font-size: 24px; /* Example size for mobile */
 }
 
@@ -24,9 +23,8 @@ body > *:not(h1) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    transform: translateY(-50%);
-    padding: 0 20x;
+    justify-content: center;  /* This ensures vertical centering without needing a transform */
+    padding: 0 20px;
 }
 
 p {
@@ -36,11 +34,10 @@ p {
 
 .navigation-section {
     height: 100vh;
-    padding-top: 50vh;  /* This will center the grid in the middle of the viewport */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px 0;
+    flex-direction: column;
+    justify-content: space-evenly;  /* Distributes the children equally across the available height */
+    align-items: center;
 }
 
 .nav-item {
