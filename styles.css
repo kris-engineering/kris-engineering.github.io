@@ -1,111 +1,75 @@
 /* Body styling with background color */
-body {
-    font-family: 'Helvetica', sans-serif;
-    background-color: #e1ad01;
-    margin: 0;
-    padding: 0;
-}
-
-/* Default styling (Mobile-first) */
-h1 {
-    background-color: #e1ad01;
-    position: fixed;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    margin: 0;
-    top: 0;
-    z-index: 1000;
-    font-size: 24px;
-}
-
-body > *:not(h1) {
-    margin-top: 60px;
-}
-
-/* Media query for larger screens (e.g., screens wider than 768px) */
-@media screen and (min-width: 768px) {
-    h1 {
-        font-size: 36px;
-        padding: 15px 0;
-    }
-
-    body > *:not(h1) {
-        margin-top: 80px;
-    }
-}
-
-.article-button {
-    width: 60%;
+body, html {
     height: auto;
-    display: block;
-    margin: 0 auto;
-    border: none;
-    cursor: pointer;
+    background-color: #e1ad01;
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
 }
 
-.articles-grid {
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px; /* Some space between title and subtitle */
+}
+
+.intro-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px; /* Add padding for mobile */
+}
+
+p {
+    text-align: center;
+}
+
+/* Navigation grid */
+.navigation-section {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
     gap: 20px;
-    padding: 60px 20px 20px 20px;
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-@media screen and (min-width: 768px) {
-    .articles-grid {
-        grid-template-columns: repeat(6, 1fr);
-        padding-top: 80px;
-    }
-}
-
-.article-container {
+.nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.article-title {
-    margin-top: 10px;
-    font-size: 16px;
-    transition: opacity 0.3s;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* This class will be hidden initially and displayed when the image is hovered over */
-.overlay-text {
-    display: none;
-    opacity: 0;
-    font-size: 16px;
-    margin-top: 10px;
-    text-align: center;
-    transition: opacity 0.3s;
-    visibility: hidden;
-}
-
-.image-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-/* When the image is hovered over, we want to apply grayscale and shrink it */
-.image-wrapper:hover .article-button {
-    filter: grayscale(100%);
-    transform: scale(0.95);
+.nav-item img {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
     transition: transform 0.3s, filter 0.3s;
 }
 
-/* When the image is hovered over, hide the title and show the "Read More..." text */
-.image-wrapper:hover .article-title {
+.nav-item:hover img {
+    filter: grayscale(100%);
+    transform: scale(0.95);
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item:hover p {
     opacity: 0;
     visibility: hidden;
 }
 
-.image-wrapper:hover .overlay-text {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+@media screen and (min-width: 768px) {
+    .navigation-section {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+        padding-top: 40px;
+    }
 }
