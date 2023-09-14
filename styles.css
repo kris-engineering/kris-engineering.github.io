@@ -74,6 +74,7 @@ p {
     visibility: hidden;
     opacity: 0;
     text-align: center;
+    z-index: 2;
 }
 
 .nav-item:hover .learn-more {
