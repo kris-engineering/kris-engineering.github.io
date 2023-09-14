@@ -9,7 +9,7 @@ body, html {
 h1 {
     font-size: 24px;
     text-align: center;
-    margin-bottom: 10px; /* Some space between title and subtitle */
+    margin-bottom: 10px;
 }
 
 p {
@@ -18,7 +18,7 @@ p {
 
 .intro-section {
     height: 100vh;
-    padding: 0 20px; /* Add padding for mobile */
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@ p {
     margin: 0 auto;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .nav-item {
@@ -40,6 +40,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* make this the reference for absolute positioning of children */
 }
 
 .nav-item img {
@@ -57,29 +58,28 @@ p {
 }
 
 .nav-item a {
-    position: relative;
     color: black;
     text-decoration: none;
-    min-height: 60px; /* Adjust this value as per your design requirements */
 }
 
-.nav-item p, .nav-item .learn-more {
+.nav-item p {
+    transition: opacity 0.3s;
+    margin-top: 10px; /* spacing from the image, can adjust as needed */
+}
+
+.nav-item:hover p {
+    opacity: 0;
+}
+
+.learn-more {
     position: absolute;
-    bottom: 10px; /* Adjust if needed to get the desired positioning */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%); /* Centers the text horizontally */
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.nav-item:hover p {
-    visibility: hidden;
-    opacity: 0;
-}
-
-.learn-more {
+    transform: translate(-50%, -50%);
     visibility: hidden;
     opacity: 0;
     text-align: center;
+    transition: opacity 0.3s;
 }
 
 .nav-item:hover .learn-more {
@@ -90,32 +90,6 @@ p {
 @media screen and (min-width: 768px) {
     .navigation-section {
         padding-top: 40px;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
-    }
-}
-
-
-.nav-item:hover p {
-    visibility: hidden;
-    opacity: 0;
-}
-
-.learn-more {
-    visibility: hidden;
-    opacity: 0;
-    text-align: center;
-    z-index: 2;
-}
-
-.nav-item:hover .learn-more {
-    visibility: visible;
-    opacity: 1;
-}
-
-
-@media screen and (min-width: 768px) {
-    .navigation-section {
-        padding-top: 40px;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
