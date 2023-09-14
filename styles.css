@@ -57,13 +57,43 @@ p {
 }
 
 .nav-item a {
+    position: relative;
     color: black;
     text-decoration: none;
+    min-height: 60px; /* Adjust this value as per your design requirements */
 }
 
 .nav-item p, .nav-item .learn-more {
+    position: absolute;
+    bottom: 10px; /* Adjust if needed to get the desired positioning */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the text horizontally */
     transition: opacity 0.3s, visibility 0.3s;
 }
+
+.nav-item:hover p {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.learn-more {
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+}
+
+.nav-item:hover .learn-more {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .navigation-section {
+        padding-top: 40px;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+    }
+}
+
 
 .nav-item:hover p {
     visibility: hidden;
@@ -81,6 +111,7 @@ p {
     visibility: visible;
     opacity: 1;
 }
+
 
 @media screen and (min-width: 768px) {
     .navigation-section {
