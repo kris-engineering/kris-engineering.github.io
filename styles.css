@@ -29,7 +29,7 @@ p {
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    align-content: center; /* This will vertically center the items in the flex container */
+    align-content: center; /* Vertically center the items in the flex container */
     justify-content: center;
 }
 
@@ -44,6 +44,16 @@ p {
 .nav-item a {
     text-decoration: none;
     color: black;
+    display: block; /* Allows for correct structure of the img and p elements inside */
+}
+
+.nav-item img {
+    max-width: 100%; /* Ensure the image fits inside the nav item */
+    transition: transform 0.3s; /* Animation for the hover effect */
+}
+
+.nav-item:hover img {
+    transform: scale(0.95); /* Shrink the image by 5% on hover */
 }
 
 @media screen and (min-width: 768px) {
