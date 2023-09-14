@@ -1,51 +1,50 @@
 /* Body styling with background color */
 body, html {
-    height: auto;
-    background-color: #e1ad01;
     margin: 0;
+    height: auto;
     font-family: 'Helvetica', sans-serif;
+    background-color: #e1ad01;
 }
 
 h1 {
-    text-align: center;
     font-size: 24px;
+    text-align: center;
     margin-bottom: 10px; /* Some space between title and subtitle */
-}
-
-.intro-section {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px; /* Add padding for mobile */
 }
 
 p {
     text-align: center;
 }
 
+.intro-section {
+    height: 100vh;
+    padding: 0 20px; /* Add padding for mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Navigation grid */
 .navigation-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
-    gap: 20px;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
 }
 
 .nav-item {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
 .nav-item img {
     width: 30%;
     height: auto;
-    display: block;
     margin: 0 auto;
     border: none;
     cursor: pointer;
@@ -58,18 +57,33 @@ p {
 }
 
 .nav-item a {
-    text-decoration: none;
     color: black;
+    text-decoration: none;
+}
+
+.nav-item p, .nav-item .learn-more {
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
 .nav-item:hover p {
-    opacity: 0;
     visibility: hidden;
+    opacity: 0;
+}
+
+.learn-more {
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+}
+
+.nav-item:hover .learn-more {
+    visibility: visible;
+    opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
     .navigation-section {
-        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
         padding-top: 40px;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
     }
 }
