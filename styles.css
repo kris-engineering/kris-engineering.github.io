@@ -64,18 +64,25 @@ p {
 
 .text-wrapper {
     display: block;
+    position: relative;
 }
 
 .nav-item p, .nav-item .learn-more {
-    margin-top: 10px;
+    position: absolute;
+    top: 100%; /* this positions the text right below the image */
+    left: 50%;
+    transform: translateX(-50%); /* centers the text horizontally */
     transition: opacity 0.3s;
-    display: block;
-    text-align: center;
+}
+
+.nav-item p {
+    z-index: 1;
 }
 
 .nav-item .learn-more {
     visibility: hidden;
     opacity: 0;
+    z-index: 2;
 }
 
 .nav-item:hover p {
