@@ -40,6 +40,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .nav-item img {
@@ -51,42 +52,34 @@ p {
     transition: transform 0.3s, filter 0.3s;
 }
 
+.nav-item:hover img {
+    filter: grayscale(100%);
+    transform: scale(0.95);
+}
+
 .nav-item a {
     color: black;
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;  /* Ensure items are centered */
 }
 
 .text-wrapper {
-    position: relative;
-    display: inline-block;
-    width: 100%;  /* Take full width of the parent container */
-    text-align: center; /* Center the text */
+    display: block;
 }
 
-.nav-item p, .learn-more {
-    width: 100%;  /* Take full width */
-    text-align: center; /* Ensure text is centered */
+.nav-item p, .nav-item .learn-more {
+    margin-top: 10px;
     transition: opacity 0.3s;
-    position: absolute;
-    top: 50%;  /* Center the text vertically */
-    left: 50%;  /* Center the text horizontally */
-    transform: translate(-50%, -50%);  /* Use with the top and left values for perfect centering */
+    display: block;
+    text-align: center;
 }
 
-.nav-item p {
-    z-index: 1;
-}
-
-.learn-more {
+.nav-item .learn-more {
     visibility: hidden;
     opacity: 0;
-    z-index: 2;
 }
 
 .nav-item:hover p {
+    visibility: hidden;
     opacity: 0;
 }
 
