@@ -71,11 +71,12 @@ p {
 }
 
 .nav-item p, .nav-item .learn-more {
-    display: inline-block; /* Display both inline */
     transition: opacity 0.3s; /* Smooth transition for fade in/out */
-    position: relative;
-    left: 50%; /* Center the text horizontally */
-    transform: translateX(-50%);
+    display: block; /* Changed to block for proper text overlaying */
+    position: absolute; /* Absolute positioning for the text overlaying */
+    bottom: 0; /* Anchoring the text to the bottom of text-wrapper */
+    width: 100%; /* Ensuring text spans the full width */
+    text-align: center;
 }
 
 .nav-item .learn-more {
