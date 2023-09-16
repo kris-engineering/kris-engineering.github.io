@@ -71,30 +71,26 @@ p {
 }
 
 .nav-item p, .nav-item .learn-more {
+    display: inline-block; /* Display both inline */
+    transition: opacity 0.3s; /* Smooth transition for fade in/out */
     position: relative;
-    left: 50%;
-    transform: translateX(-50%); /* centers the text horizontally */
-    transition: opacity 0.3s;
-}
-
-.nav-item p {
-    z-index: 1;
+    left: 50%; /* Center the text horizontally */
+    transform: translateX(-50%);
 }
 
 .nav-item .learn-more {
-    visibility: hidden;
-    opacity: 0;
-    z-index: 2;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Fully transparent by default */
 }
 
 .nav-item:hover p {
-    visibility: hidden;
-    opacity: 0;
+    visibility: hidden; /* Hide on hover */
+    opacity: 0; /* Fade out */
 }
 
 .nav-item:hover .learn-more {
-    visibility: visible;
-    opacity: 1;
+    visibility: visible; /* Show on hover */
+    opacity: 1; /* Fade in */
 }
 
 @media screen and (min-width: 768px) {
