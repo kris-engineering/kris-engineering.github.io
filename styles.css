@@ -27,12 +27,14 @@ p {
 
 /* Navigation grid */
 .navigation-section {
+  height: 100vh;
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
+    align-content: space-between;
 }
 
 .nav-item {
