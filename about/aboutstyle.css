@@ -1,26 +1,35 @@
-/* Body styling with background color */
-body, html {
-    margin: 0;
-    height: auto;
+body {
     font-family: 'Helvetica', sans-serif;
     background-color: #ffdb88;
-}
-
-.h1-special {
-    font-family: 'Times New Roman', Times, serif;
-    letter-spacing: -2px;
-    font-style: italic;
-    color: #724f00;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-    font-size: 32px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    letter-spacing: -2px;
+    color: #724f00;
+    width: 100%;
     text-align: center;
-    margin-bottom: 10px; 
+    padding: 10px 0;
+    margin: 0;
+    font-size: 24px;
 }
 
-p {
-    text-align: center;
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    letter-spacing: -2px;
+    color: #724f00;
+    font-size: 16px;
+}
+
+h3, h4, h5, h6 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #724f00;
+    font-size: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -33,15 +42,95 @@ p {
 .content-container {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    padding: 0px;
     margin: 5%;
     overflow: auto;
 }
 
-content {
+article {
     font-family: 'Helvetica', sans-serif;
     font-size: 16px;
     color: black;
-    padding: 20px;
+    padding: 50px; 
     overflow: auto;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Mobile */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+    .articles-grid {
+        grid-template-columns: repeat(3, 1fr); /* iPad */
+        padding-top: 40px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .articles-grid {
+        grid-template-columns: repeat(5, 1fr); /* Desktop */
+        padding-top: 60px;
+    }
+}
+
+.article-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.article-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #724f00;
+    letter-spacing: -2px;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: opacity 0.3s;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* hidden initially displayed when the image is hovered over */
+.overlay-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #724f00;
+    letter-spacing: -2px;
+    display: none;
+    opacity: 0;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+    transition: opacity 0.3s;
+    visibility: hidden;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.image-wrapper:hover .article-button {
+    filter: grayscale(100%);
+    transform: scale(0.95);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+
+.image-wrapper:hover .article-title {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.image-wrapper:hover .overlay-text {
+    display: block;
+    opacity: 1;
+    visibility: visible;
 }
