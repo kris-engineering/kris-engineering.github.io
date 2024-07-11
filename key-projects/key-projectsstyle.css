@@ -1,8 +1,17 @@
 body, html {
     margin: 0;
-    height: auto;
+    height: 100%;
     font-family: 'Helvetica', sans-serif;
     background-color: #ffdb88;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffdb88;
+    position: relative;
 }
 
 .h1-special {
@@ -34,6 +43,7 @@ p {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     align-content: space-between;
+    flex: 1; /* Ensure the content takes up available space */
 }
 
 .nav-item {
@@ -44,6 +54,7 @@ p {
     justify-content: center;
     position: relative;
     height: 100%;
+    padding: 20px; /* Increase padding */
 }
 
 .nav-item img {
@@ -166,3 +177,35 @@ p {
     opacity: 1;
     visibility: visible;
 }
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ffdb88;
+    position: relative;
+}
+.footer-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #724f00;
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 1px; /* Increase kerning */
+}
+
+/* Ensure the footer is aligned to the bottom */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.navigation-section {
+    flex: 1; /* This makes the navigation section take up available space */
+}
+footer {
+    flex-shrink: 0; /* Ensure the footer does not shrink */
+}
+
