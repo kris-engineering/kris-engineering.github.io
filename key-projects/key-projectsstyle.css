@@ -1,3 +1,4 @@
+/* Existing CSS */
 body, html {
     margin: 0;
     height: 100%;
@@ -194,6 +195,11 @@ footer {
     letter-spacing: 1px; /* Increase kerning */
 }
 
+.footer-text a {
+    color: #724f00; /* Ensure the link is styled correctly */
+    text-decoration: none; /* Remove underline */
+}
+
 /* Ensure the footer is aligned to the bottom */
 html, body {
     height: 100%;
@@ -208,4 +214,3 @@ body {
 footer {
     flex-shrink: 0; /* Ensure the footer does not shrink */
 }
-
