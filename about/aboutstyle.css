@@ -3,6 +3,9 @@ body {
     background-color: #ffdb88;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 h1 {
@@ -17,21 +20,6 @@ h1 {
     font-size: 24px;
 }
 
-h2 {
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    letter-spacing: -2px;
-    color: #724f00;
-    font-size: 16px;
-}
-
-h3, h4, h5, h6 {
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: #724f00;
-    font-size: 16px;
-}
-
 @media screen and (min-width: 768px) {
     h1 {
         font-size: 36px;
@@ -44,6 +32,7 @@ h3, h4, h5, h6 {
     border-radius: 10px;
     margin: 5%;
     overflow: auto;
+    flex: 1; /* Ensure the content takes up available space */
 }
 
 article {
@@ -54,92 +43,11 @@ article {
     overflow: auto;
 }
 
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Mobile */
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-    .articles-grid {
-        grid-template-columns: repeat(3, 1fr); /* iPad */
-        padding-top: 40px;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .articles-grid {
-        grid-template-columns: repeat(5, 1fr); /* Desktop */
-        padding-top: 60px;
-    }
-}
-
-.article-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.article-title {
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: #724f00;
-    letter-spacing: -2px;
-    margin-top: 10px;
-    font-size: 16px;
-    transition: opacity 0.3s;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* hidden initially displayed when the image is hovered over */
-.overlay-text {
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: #724f00;
-    letter-spacing: -2px;
-    display: none;
-    opacity: 0;
-    font-size: 16px;
-    margin-top: 10px;
-    text-align: center;
-    transition: opacity 0.3s;
-    visibility: hidden;
-}
-
-.image-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-
-.image-wrapper:hover .article-button {
-    filter: grayscale(100%);
-    transform: scale(0.95);
-    transition: transform 0.3s, filter 0.3s;
-}
-
-
-.image-wrapper:hover .article-title {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.image-wrapper:hover .overlay-text {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
-
 /* Home button styling */
 header {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffdb88;
 }
 
 .home-button {
@@ -149,7 +57,9 @@ header {
     font-size: 24px;
     text-decoration: none;
     display: inline-block;
-    position: relative;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
 .home-text, .home-hover-text {
@@ -178,4 +88,45 @@ header {
 .home-button:hover .home-hover-text {
     opacity: 1;
     visibility: visible;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ffdb88;
+    position: relative;
+    flex-shrink: 0; /* Ensure the footer does not shrink */
+}
+
+.footer-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: #724f00;
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 2px; /* Increase kerning */
+}
+
+.footer-text a {
+    color: #724f00;
+    text-decoration: none;
+}
+
+/* Ensure the footer is aligned to the bottom */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container {
+    flex: 1; /* This makes the content section take up available space */
+}
+
+footer {
+    flex-shrink: 0; /* Ensure the footer does not shrink */
 }
